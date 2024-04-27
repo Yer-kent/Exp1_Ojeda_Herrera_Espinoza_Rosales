@@ -1,0 +1,71 @@
+<!-- formulario.html -->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Postulación - Chile Limpio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Formulario de Postulación - Chile Limpio</h1>
+    <form id="postulacionForm">
+        <div>
+            <label for="rut">RUT:</label>
+            <input type="text" id="rut" name="rut" required minlength="9" maxlength="10" placeholder="Ejemplo: 12345678-9">
+        </div>
+        <div>
+            <label for="apellidoPaterno">Apellido Paterno:</label>
+            <input type="text" id="apellidoPaterno" name="apellidoPaterno" required minlength="3" maxlength="20" placeholder="Ejemplo: Pérez">
+        </div>
+        <div>
+            <label for="apellidoMaterno">Apellido Materno:</label>
+            <input type="text" id="apellidoMaterno" name="apellidoMaterno" required minlength="3" maxlength="20" placeholder="Ejemplo: González">
+        </div>
+        <div>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required minlength="3" maxlength="20" placeholder="Ejemplo: Juan">
+        </div>
+        <div>
+            <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+            <input type="date" id="fechaNacimiento" name="fechaNacimiento" required>
+        </div>
+        <div>
+            <label for="edad">Edad:</label>
+            <input type="number" id="edad" name="edad" required min="18" max="35" placeholder="Ejemplo: 25">
+        </div>
+        <div>
+            <label for="genero">Género:</label>
+            <select id="genero" name="genero" required>
+                <option value="">Seleccionar</option>
+                <option value="masculino">Masculino</option>
+                <option value="femenino">Femenino</option>
+                <option value="otro">Otro</option>
+            </select>
+        </div>
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required placeholder="Ejemplo: ejemplo@correo.com">
+        </div>
+        <div>
+            <label for="celular">Celular:</label>
+            <input type="tel" id="celular" name="celular" required minlength="9" maxlength="12" placeholder="Ejemplo: +56912345678">
+        </div>
+        <div>
+            <label for="profesion">Profesión:</label>
+            <input type="text" id="profesion" name="profesion" required placeholder="Ejemplo: Ingeniero Ambiental">
+        </div>
+        <div>
+            <label for="motivacion">Motivación para postular al trabajo:</label>
+            <textarea id="motivacion" name="motivacion" required placeholder="Ejemplo: Me interesa contribuir al cuidado del medio ambiente y aprender sobre la conservación de los ecosistemas costeros."></textarea>
+        </div>
+        <div>
+            <input type="submit" value="Enviar">
+            <input type="button" value="Crear Carta" onclick="generarCarta()">
+        </div>
+    </form>
+    <textarea id="carta" readonly></textarea>
+    <script src="carta.js"></script>
+</body>
+</html>
